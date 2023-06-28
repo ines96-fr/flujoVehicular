@@ -1,0 +1,45 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+::ng-deep {
+  ng2-st-tbody-edit-delete {
+    display: none;
+    height: 0 !important;
+  }
+
+  ng2-st-tbody-custom {
+    display: flex;
+    text-align: center;
+  }
+
+  ng2-smart-table-title a:focus {
+    font-weight: bold;
+    color: #009ECE !important;
+  }
+
+  ng2-smart-table thead>tr>th {
+    font-weight: bold;
+    color: #009ECE !important;
+  }
+
+  ng2-smart-table thead>tr>th>div {
+    font-weight: bold;
+    color: #009ECE !important;
+  }
+
+  td.ng2-smart-actions a {
+    cursor: pointer;
+    color: #009ECE;
+  }
+}
+
+/*:host /deep/ #table1 
+
+:host /deep/ #table2 table th {
+  background-color: black;
+}*/

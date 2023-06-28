@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <form>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <ngx-select label='Algoritmos' fullWidth [options]="optionsAlgoritmos"></ngx-select>
+        </div>
+        <div class=" col-md-6 form-group">
+          <ngx-input label='Nombre'></ngx-input>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-textarea label='Descripción'></ngx-textarea>
+        </div>
+        <div class=" col-md-6 form-group">
+          <ngx-select [options]="optionsServicios" label='Servicio AWS'></ngx-select>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-select [options]="optionsModulo" label='Módulo'></ngx-select>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-input label='Comando de Ejecución'></ngx-input>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-input label='Identificador'></ngx-input>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-select [options]="optionsAnalisis" label='Tipo Análisis'></ngx-select>
+        </div>
+        <div class="col-md-12" style="text-align: end;">
+          <button type="submit" nbButton status="primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
