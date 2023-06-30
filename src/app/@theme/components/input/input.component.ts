@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -10,6 +11,8 @@ export class InputComponent implements OnInit {
 
   @Input() label: string;
   @Input() type: string;
+  @Input() public form: FormGroup;
+  @Input() ControlName: string;
   @Output() selectedOption = new EventEmitter<string>();
 
 

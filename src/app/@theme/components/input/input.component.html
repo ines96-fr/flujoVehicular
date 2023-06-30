@@ -1,2 +1,14 @@
-<label for="exampleInput" class="label ">{{label}}</label>
-<input  type={{type}} nbInput fullWidth id="exampleInput" placeholder={{label}}>
+
+<div *ngIf="form != null; else elseBlock" style="width: 100%;">
+    <div [formGroup]="form">
+        <label for="exampleInput" class="label ">{{label}}</label>
+        <input type={{type}} nbInput fullWidth id="exampleInput" placeholder={{label}} formControlName={{ControlName}}>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <div style="width: 100%;">
+        <label for="exampleInput" class="label ">{{label}}</label>
+        <input type={{type}} nbInput fullWidth id="exampleInput" placeholder={{label}}>
+    </div>
+</ng-template>

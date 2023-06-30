@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { AlgoritmosComponent } from './algoritmos/algoritmos.component';
+import { PruebasComponent } from './pruebas/pruebas.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,10 @@ const routes: Routes = [{
     {
       path: 'algoritmos',
       component: AlgoritmosComponent,
+    },
+    {
+      path: 'pruebas',
+      component: PruebasComponent,
     },
     {
       path: 'layout',

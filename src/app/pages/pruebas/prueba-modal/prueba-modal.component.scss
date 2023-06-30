@@ -1,0 +1,15 @@
+
+.table-container {
+  height: 250px;
+  overflow-y: auto;
+  border-top: 1px solid #dee2e6;
+}    
+
+::ng-deep table tr:first-child th {
+  position: sticky !important;
+  top: -1px;
+  z-index: 100;
+  background: white;
+  border: 1px solid #dee2e6;
+  height: 58px;
+}

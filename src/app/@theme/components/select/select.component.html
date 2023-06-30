@@ -1,8 +1,21 @@
-<div style="width: 100%;">
-  <label for="exampleSelect" class="label">{{label}}</label>
-  <nb-select id="exampleSelect" fullWidth [selected]="selectedDefault" (selectedChange)="onChangeSelected($event)"
-  status="primary">
-  <nb-option *ngFor="let option of options" [value]="option.value"> {{ option.name }}</nb-option>
-</nb-select>
+
+
+<div *ngIf="form != null; else elseBlock" style="width: 100%;">
+  <div style="width: 100%;" [formGroup]="form">
+    <label for="exampleSelect" class="label">{{label}}</label>
+    <nb-select id="exampleSelect" fullWidth [selected]="selectedDefault" (selectedChange)="onChangeSelected($event)"
+      status="primary" formControlName={{ControlName}}>
+      <nb-option *ngFor="let option of options" [value]="option.value"> {{ option.name }}</nb-option>
+    </nb-select>
+  </div>
 </div>
 
+<ng-template #elseBlock>
+  <div style="width: 100%;">
+    <label for="exampleSelect" class="label">{{label}}</label>
+    <nb-select id="exampleSelect" fullWidth [selected]="selectedDefault" (selectedChange)="onChangeSelected($event)"
+      status="primary">
+      <nb-option *ngFor="let option of options" [value]="option.value"> {{ option.name }}</nb-option>
+    </nb-select>
+  </div>
+</ng-template>
