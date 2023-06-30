@@ -4,7 +4,9 @@ import { AlgortimoModalComponent } from './algoritmoModal/algoritmoModal.compone
 import { NbWindowService } from '@nebular/theme';
 
 export interface INameButton{
-  crear:string
+  crear:string,
+  ver:string,
+
 }
 
 
@@ -21,10 +23,13 @@ export class AlgoritmosComponent implements INameButton{
 
   settingsTable = settings;
   dataTable = data;
+  verEjemplo:boolean= false;
   icon:string = 'settings-2-outline';
   crear: string = "Configurar Algoritmos";
+  ver: string = "Ejemplos Algoritmos";
   name:INameButton = {
-    crear: this.crear
+    crear: this.crear,
+    ver: this.ver
   }
 
   constructor(private windowService: NbWindowService) {
@@ -38,6 +43,8 @@ export class AlgoritmosComponent implements INameButton{
   onCustom(event) {
     if(event.action === "editar"){
       this.openWindowForm(event);
+    }else if(event.action === "ver"){
+      this.verEjemplo = true;
     }else{
      // this.windowService.open(, { title: `Configuración de Algoritmos`, hasBackdrop: true, closeOnEsc: false });
     }

@@ -3,15 +3,15 @@ export const settings:Object = {
     custom: [
       {
         name: 'ver',
-        title: '<i nbTooltip="This is a tooltip" nbTooltipPlacement="bottom" class="nb-edit"></i>',
+        title: '<i class="nb-list" data-toggle="tooltip" data-placement="top" title="Ejemplos"></i>',
       },
       {
         name: 'editar',
-        title: '<i nbTooltip="This is a tooltip" nbTooltipPlacement="bottom" class="nb-edit"></i>',
+        title: '<i class="nb-edit" data-toggle="tooltip" data-placement="top" data-bs-html="true" title="Editar"></i>',
       },
       {
         name: 'eliminar',
-        title: '<i class="nb-trash"></i>',
+        title: '<i data-toggle="tooltip" data-placement="top" title="Eliminar" class="nb-trash"></i>',
       }
     ],
   },

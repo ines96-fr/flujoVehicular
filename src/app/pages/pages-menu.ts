@@ -13,13 +13,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/algoritmos',
   },
 
-  /*{
+ {
     title: 'Ejemplos',
     icon: 'home-outline',
     link: '/pages/ui-features/icons',
   },
 
-  {
+   /*{
     title: 'Pruebas',
     icon: 'home-outline',
     link: '/pages/modal-overlays/dialog',
