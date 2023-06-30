@@ -12,7 +12,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'home-outline',
     link: '/pages/algoritmos',
   },
-
+  {
+    title: 'Pruebas',
+    icon: 'home-outline',
+    link: '/pages/pruebas',
+  },
   /*{
     title: 'Ejemplos',
     icon: 'home-outline',

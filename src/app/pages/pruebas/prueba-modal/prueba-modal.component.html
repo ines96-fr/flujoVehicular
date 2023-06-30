@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <ngx-input label='Nombre' [ControlName]="'nombre'" [form]="formGroup"></ngx-input>
+        </div>
+        <div class=" col-md-6 form-group">
+          <ngx-select label='Módulo' fullWidth [options]="optionsModulo"
+          [ControlName]="'modulo'" [form]="formGroup"></ngx-select>
+        </div>
+        <div class="col-md-6 form-group">
+          <ngx-select label='Ejemplo' fullWidth [options]="optionsEjemplos"
+          [ControlName]="'ejemplo'" [form]="formGroup"></ngx-select>
+        </div>
+        <div class=" col-md-6 form-group d-flex justify-content-center align-items-end">
+          <ngx-buttons [name]="NombreBoton" icon="settings-2-outline"></ngx-buttons>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="table-container">
+          <ngx-smart-table [settingsTable]="settingsTable" [data]="dataTable"
+            (onEvent)="onCustom($event)"></ngx-smart-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

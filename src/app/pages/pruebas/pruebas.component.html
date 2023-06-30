@@ -1,0 +1,23 @@
+<nb-card>
+    <nb-card-header>
+      <h2>Pruebas</h2>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="pb-4" style="text-align: end;">
+              <ngx-buttons (click)="openWindowForm($event)" [icon]="icon" [name]="crear"></ngx-buttons>
+            </div>
+  
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ngx-smart-table [settingsTable]="settingsTable" [data]="dataTable"
+              (onEvent)="onCustom($event)"></ngx-smart-table>
+          </div>
+          
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  

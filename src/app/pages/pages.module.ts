@@ -10,6 +10,9 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { AlgoritmosComponent } from './algoritmos/algoritmos.component';
 import { AlgortimoModalComponent } from './algoritmos/algoritmoModal/algoritmoModal.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { PruebasComponent } from './pruebas/pruebas.component';
+import { PruebaModalComponent } from './pruebas/prueba-modal/prueba-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -27,11 +30,15 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbSelectModule,
     NbInputModule,
     NbButtonModule,
+    FormsModule,
+    ReactiveFormsModule
 ],
   declarations: [
     PagesComponent,
     AlgoritmosComponent,
-    AlgortimoModalComponent
+    AlgortimoModalComponent,
+    PruebasComponent,
+    PruebaModalComponent
 
   ],
 })

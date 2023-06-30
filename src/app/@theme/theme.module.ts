@@ -50,6 +50,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ButtonsComponent } from './components/button/buttons.component';
 import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/textArea/textarea.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -71,9 +72,9 @@ const NB_MODULES = [
   NbEvaIconsModule,
   Ng2SmartTableModule,
   NbInputModule,
-  NbTooltipModule
-
-
+  NbTooltipModule,
+  FormsModule,
+  ReactiveFormsModule
 
 ];
 const COMPONENTS = [
