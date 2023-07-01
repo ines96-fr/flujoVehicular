@@ -1,4 +1,5 @@
-import { Parametros } from "./Parametro.model";
+import { Parametros } from "./parametro.model";
+
 
 
 export class Ejemplo {

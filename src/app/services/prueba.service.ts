@@ -12,15 +12,11 @@ import { Respuesta } from '../Models/respuesta.model';
 })
 export class PruebaService {
 
-  public pruebas : Prueba[] = [];
-
-  private urlEndPoint: string = environment.UrlApiGateway;
-
-  
+  private urlEndPoint: string = environment.UrlApiGatewayParametrizacion;
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  async obtenerPruebas() {
+  obtenerPruebas() : Observable<Array<Prueba>> {
     return this.http.get(`${this.urlEndPoint}/pruebas`).pipe(
       map(response => {
         let respuesta = response as Respuesta;
@@ -28,7 +24,6 @@ export class PruebaService {
         if (respuesta.statusCode === 400) {
           return pruebas;
         }
-        console.log("ESTOY EN EL MÉTODO",respuesta)
         pruebas = response as Prueba[];
         return pruebas.map(prueba => {
           prueba.observacion = prueba.observacion.toUpperCase();
@@ -39,6 +34,10 @@ export class PruebaService {
           return prueba;
         });
       })
-    ).toPromise();
+    );
+  }
+
+  obtenerPrueba(id: number): Observable<Prueba> {
+    return this.http.get<Prueba>(`${this.urlEndPoint}/cabpruebas/${id}`).pipe();
   }
 }
