@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { data, settings } from './pruebas';
 import { NbWindowControlButtonsConfig, NbWindowService } from '@nebular/theme';
 import { PruebaModalComponent } from './prueba-modal/prueba-modal.component';
 import { PruebaService } from '../../services/prueba.service';
 import { Prueba } from '../../Models/prueba.model';
+import { LocalDataSource } from 'ng2-smart-table';
+import { ISettingsTables } from '../../@theme/components';
 
 
 @Component({
@@ -14,33 +16,25 @@ import { Prueba } from '../../Models/prueba.model';
 export class PruebasComponent implements OnInit {
 
   settingsTable = settings;
-  //dataTable = data;
-  dataTable;
+  dataTable : Array<Prueba> = [];
   icon:string = 'settings-2-outline';
   crear: string = "Crear Prueba";
+
+  source: LocalDataSource;  
+  settings:ISettingsTables; 
 
   constructor(private windowService: NbWindowService,
     private pruebaService : PruebaService) 
   {
-    
+    this.pruebaService.obtenerPruebas().subscribe((data : Array<Prueba>) => {
+      this.dataTable = data;
+    });
   }
-
-  get pruebasResult() : Prueba[] {
-    return this.pruebaService.pruebas;
-  }
+  
 
   ngOnInit() {
 
-    console.log("=======ANTES======");
-    /* this.pruebaService.obtenerPruebas().subscribe(response => {
-      this.dataTable = response;
-      console.log(this.dataTable)
-    }) */
-    this.pruebaService.obtenerPruebas();
-    console.log("=======DESPUES======");
   }
-
-  
 
   openWindowForm(e:Event, data? : Object) {
 
@@ -60,7 +54,7 @@ export class PruebasComponent implements OnInit {
   }
 
   onCustom(event) {
-
+    //console.log(event.data)
     if(event.action === "editar"){
       this.openWindowForm(event,event.data);
     }
