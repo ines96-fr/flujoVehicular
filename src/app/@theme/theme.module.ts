@@ -15,6 +15,7 @@ import {
   NbCardModule,
   NbInputModule,
   NbTooltipModule,
+  NbAlertModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -51,6 +52,7 @@ import { ButtonsComponent } from './components/button/buttons.component';
 import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/textArea/textarea.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MessageDeleteComponent } from './components/messageDelete/messageDelete.component';
 
 
 
@@ -74,7 +76,8 @@ const NB_MODULES = [
   NbInputModule,
   NbTooltipModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  NbAlertModule
 
 ];
 const COMPONENTS = [
@@ -89,7 +92,8 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
-  TextAreaComponent
+  TextAreaComponent,
+  MessageDeleteComponent
 
 ];
 const PIPES = [

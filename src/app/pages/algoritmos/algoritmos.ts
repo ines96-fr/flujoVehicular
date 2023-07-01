@@ -943,3 +943,8 @@ export const data:Array<Object> = [
   },
 
 ];
+
+export const optionsAlgoritmos = [{value:"1", name:"Algoritmo de Regresión"}, {value:"2", name:"Algoritmo de Árbol de Desición",}];
+export const optionsModulo = [{value:"1", name:"Aálisis de imágenes"}, {value:"2", name:"Análisis de Trayectorias"}, {value:"2", name:"Parametrización"}];
+export const optionsServicios = [{value:"1", name:"Máquina EC2"}];
+export const optionsAnalisis = [{value:"1", name:"Offline"}, {value:"2", name:"Online"}]

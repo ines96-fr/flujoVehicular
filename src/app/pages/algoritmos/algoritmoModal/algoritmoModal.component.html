@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="accion !== 'eliminar'; else elseBlock">
   <div class="col-md-12">
     <form>
       <div class="row">
@@ -32,4 +32,12 @@
       </div>
     </form>
   </div>
+</div>
+<div class="row">
+  <ng-template #elseBlock>
+    <ngx-messageDelete></ngx-messageDelete>
+    <div style="text-align: end;">
+      <ngx-buttons icon="trash-2-outline" name="Eliminar" status="warning"></ngx-buttons>
+    </div>
+  </ng-template>
 </div>

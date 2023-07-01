@@ -1,19 +1,39 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NbWindowRef } from '@nebular/theme';
+import { optionsAlgoritmos, optionsModulo, optionsServicios, optionsAnalisis } from "../algoritmos";
+import { IOptions } from "../../../Models/shared.model";
 
 @Component({
   templateUrl: './algoritmoModal.component.html',
   styleUrls: ['./algoritmoModal.component.scss'],
 })
+
 export class AlgortimoModalComponent {
-  label:Object = {
+
+  public formGroup: FormGroup;
+  data: any = null;
+  accion:any = "";
+  optionsAlgoritmos:IOptions[] = optionsAlgoritmos;
+  optionsModulo:IOptions[] = optionsModulo;
+  optionsServicios:IOptions[] = optionsServicios;
+  optionsAnalisis:IOptions[] = optionsAnalisis;
+
+  constructor(public windowRef: NbWindowRef, private formBuilder: FormBuilder) {
+    this.data = windowRef.config.context;
+    this.accion = windowRef.config.context;
+    console.log(this.data)
+
+    this.formGroup = this.formBuilder.group({
+      nombre: this.data?.Descripcion,
+      modulo: "1",
+      ejemplo: "1"
+    });
 
   }
-  optionsAlgoritmos = [{value:"1", name:"Algoritmo de Regresión"}, {value:"2", name:"Algoritmo de Árbol de Desición",}];
-  optionsModulo = [{value:"1", name:"Aálisis de imágenes"}, {value:"2", name:"Análisis de Trayectorias"}, {value:"2", name:"Parametrización"}];
-  optionsServicios = [{value:"1", name:"Máquina EC2"}];
-  optionsAnalisis = [{value:"1", name:"Offline"}, {value:"2", name:"Online"}]
-  constructor(public windowRef: NbWindowRef) {}
+
+
+
 
   close() {
     this.windowRef.close();

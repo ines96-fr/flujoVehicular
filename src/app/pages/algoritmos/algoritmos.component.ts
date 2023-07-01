@@ -1,16 +1,8 @@
 import { Component, Inject, Injectable, TemplateRef, ViewChild } from '@angular/core';
 import { settings, data } from './algoritmos';
 import { AlgortimoModalComponent } from './algoritmoModal/algoritmoModal.component';
-import { NbWindowService } from '@nebular/theme';
-
-export interface INameButton{
-  crear:string,
-  ver:string,
-
-}
-
-
-
+import { NbWindowControlButtonsConfig, NbWindowService } from '@nebular/theme';
+import { MessageDeleteComponent } from '../../@theme/components/messageDelete/messageDelete.component';
 
 @Component({
   selector: 'ngx-algoritmos',
@@ -19,25 +11,25 @@ export interface INameButton{
 })
 
 @Injectable()
-export class AlgoritmosComponent implements INameButton{
+export class AlgoritmosComponent{
 
   settingsTable = settings;
   dataTable = data;
   verEjemplo:boolean= false;
-  icon:string = 'settings-2-outline';
-  crear: string = "Configurar Algoritmos";
-  ver: string = "Ejemplos Algoritmos";
-  name:INameButton = {
-    crear: this.crear,
-    ver: this.ver
-  }
+  buttons: NbWindowControlButtonsConfig = {
+    minimize: false,
+    maximize: false,
+    fullScreen: false,
+    close: true,
+  };
 
   constructor(private windowService: NbWindowService) {
 
   }
 
   openWindowForm(e:Event) {
-    this.windowService.open(AlgortimoModalComponent, { title: `Configuración de Algoritmos`, hasBackdrop: true, closeOnEsc: false });
+    console.log(e)
+    this.windowService.open(AlgortimoModalComponent, { title: `Configuración de Algoritmos`, hasBackdrop: true, closeOnEsc: false, buttons:this.buttons, context : ""});
   }
 
   onCustom(event) {
@@ -46,7 +38,8 @@ export class AlgoritmosComponent implements INameButton{
     }else if(event.action === "ver"){
       this.verEjemplo = true;
     }else{
-     // this.windowService.open(, { title: `Configuración de Algoritmos`, hasBackdrop: true, closeOnEsc: false });
+      //this.openWindowForm(event);
+     this.windowService.open(AlgortimoModalComponent, { hasBackdrop: true, closeOnEsc: false, buttons:this.buttons, context : "eliminar"});
     }
     //alert(`Custom event '${event.action}' fired on row №: ${event.data.id}`)
   }

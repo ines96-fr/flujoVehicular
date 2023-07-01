@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="pb-4" style="text-align: end;">
-            <ngx-buttons (click)="openWindowForm($event)" [icon]="icon" [name]="name.crear" ></ngx-buttons>
+            <ngx-buttons (click)="openWindowForm($event)" icon='settings-2-outline' name="Configurar Algoritmos" status="primary"></ngx-buttons>
           </div>
 
         </div>
@@ -15,13 +15,16 @@
           <ngx-smart-table [settingsTable]="settingsTable" [data]="dataTable"
             (onEvent)="onCustom($event)"></ngx-smart-table>
         </div>
-        <div class="pb-4" style="text-align: end;" *ngIf="verEjemplo">
-          <ngx-buttons (click)="openWindowForm($event)" [icon]="icon" [name]="name.ver" ></ngx-buttons>
+        <div *ngIf="verEjemplo">
+          <div class="pb-4" style="text-align: end;" >
+            <ngx-buttons (click)="openWindowForm($event)" icon='settings-2-outline' name="Ejemplos Algoritmos" ></ngx-buttons>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ngx-smart-table [settingsTable]="settingsTable" [data]="dataTable"
+              (onEvent)="onCustom($event)"></ngx-smart-table>
+          </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" *ngIf="verEjemplo">
-          <ngx-smart-table [settingsTable]="settingsTable" [data]="dataTable"
-            (onEvent)="onCustom($event)"></ngx-smart-table>
-        </div>
+
       </div>
     </div>
   </nb-card-body>

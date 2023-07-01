@@ -10,6 +10,7 @@ export class ButtonsComponent implements OnInit {
 
   @Input() name: string;
   @Input() icon: string;
+  @Input() status: string;
   @Output() buttonClick = new EventEmitter<Event>();
 
 
