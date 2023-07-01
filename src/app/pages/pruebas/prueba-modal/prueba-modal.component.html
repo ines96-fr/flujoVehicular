@@ -5,17 +5,26 @@
         <div class="col-md-6 form-group">
           <ngx-input label='Nombre' [ControlName]="'nombre'" [form]="formGroup"></ngx-input>
         </div>
+
         <div class=" col-md-6 form-group">
-          <ngx-select label='Módulo' fullWidth [options]="optionsModulo"
+          <ngx-select label='Módulo' (selectedOption)="moduloSeleccionado($event)" fullWidth [options]="optionsModulo"
           [ControlName]="'modulo'" [form]="formGroup"></ngx-select>
         </div>
+
+        <div class="col-md-6 form-group">
+          <ngx-select label='Algoritmo' (selectedOption)="algoritmoSeleccionado($event)" fullWidth [options]="optionsAlgoritmo"
+          [ControlName]="'algoritmo'" [form]="formGroup"></ngx-select>
+        </div>
+
         <div class="col-md-6 form-group">
           <ngx-select label='Ejemplo' fullWidth [options]="optionsEjemplos"
           [ControlName]="'ejemplo'" [form]="formGroup"></ngx-select>
         </div>
-        <div class=" col-md-6 form-group d-flex justify-content-center align-items-end">
+
+        <div class=" col-md-6 form-group d-flex justify-content-start align-items-end">
           <ngx-buttons [name]="NombreBoton" icon="settings-2-outline"></ngx-buttons>
         </div>
+        
       </div>
     </form>
     <div class="row">

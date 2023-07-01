@@ -23,17 +23,21 @@ export class SmartTableComponent implements ISettingsTables {
   @Input() data:Array<Object>; 
   @Output() onEvent = new EventEmitter<Event>();
 
-  source: LocalDataSource; 
+  source: LocalDataSource;  
   settings:ISettingsTables; 
 
   constructor(private service: SmartTableData) {
-    
+    console.log("====CONSTRUCTOR SMART TABLE=====");
   }
   actions: Object;
   columns: Object;
 
-  ngOnInit() {
+  ngOnChanges(){
     this.source = new LocalDataSource(this.data);
+  }
+
+  ngOnInit() {
+    
     this.settings = {
       ...this.settingsTable, 
       actions: {
